@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Book a Massage | Queendom De Original Spa</title>
+    <meta name="description" content="Book a massage appointment with Queendom De Original Spa by WhatsApp, call, or payment confirmation.">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav">
+        <a class="brand" href="index.html"><img src="assets/logo.jpeg" alt="Queendom De Original Spa logo"><span>Queendom<br>De Original Spa</span></a>
+        <div class="nav-links"><a href="services.html">Services</a><a href="booking.html">Booking</a><a href="about.html">About</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a><a class="button" href="https://wa.me/2348029870054">WhatsApp</a></div>
+      </nav>
+    </header>
+    <main>
+      <section class="page-hero">
+        <div class="container">
+          <div><span class="eyebrow">Appointments</span><h1>Book, pay, and send confirmation.</h1></div>
+          <p>Submit your appointment details first. The next step shows payment details and prepares your WhatsApp confirmation.</p>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container booking-grid">
+          <div>
+            <div class="info-card">
+              <h3>Booking process</h3>
+              <div class="steps" style="margin-top:18px">
+                <div class="step"><strong>Fill appointment details</strong><p class="muted">Your selection is saved into the simple admin dashboard for review.</p></div>
+                <div class="step"><strong>Pay booking fee</strong><p class="muted">50% payment may be required before confirmation. Home service can include transport fee.</p></div>
+                <div class="step"><strong>Send receipt on WhatsApp</strong><p class="muted">The button prepares a complete WhatsApp message with your booking details.</p></div>
+              </div>
+            </div>
+            <div class="info-card">
+              <h3>Payment details</h3>
+              <p class="muted">Bank Name: Opay<br>Account Name: Orji Mary Goodness<br>Account No: 8029870054</p>
+            </div>
+          </div>
+          <div class="info-card">
+            <form id="bookingForm">
+              <div class="form-row">
+                <label>Name<input type="text" name="name" placeholder="Your full name" required></label>
+                <label>Phone / WhatsApp<input type="tel" name="phone" placeholder="080..." required></label>
+              </div>
+              <div class="form-row">
+                <label>Date & Time<input type="datetime-local" name="date" required></label>
+                <label>Massage Type<select name="massage" required><option value="">Select service</option><option>Swedish Massage</option><option>Deep Tissue Massage</option><option>Hot Stone Massage</option><option>Yoni Massage</option><option>Erotic Massage</option><option>Nuru Massage</option><option>Nuru Exclusive</option></select></label>
+              </div>
+              <div class="form-row">
+                <label>Duration<select name="duration"><option>60 mins</option><option>90 mins</option><option>120 mins</option><option>30 mins</option></select></label>
+                <label>Location<select name="location"><option>Spa</option><option>Home service</option></select></label>
+              </div>
+              <label>Home Address<textarea name="address" placeholder="Required for home service"></textarea></label>
+              <div class="form-row">
+                <label>Allergies / Health Issues<input type="text" name="health" placeholder="Mention any important notes"></label>
+                <label>Preferred Pressure<select name="pressure"><option>Soft</option><option>Medium</option><option>Firm</option></select></label>
+              </div>
+              <label>Consent<select name="consent"><option>I agree to the spa policy and consent to massage</option></select></label>
+              <button type="submit">Continue to Payment</button>
+            </form>
+            <div class="payment-panel" id="paymentPanel">
+              <div>
+                <span class="eyebrow">Payment</span>
+                <h3>Secure your session</h3>
+                <p class="muted">Pay the required booking fee, then send your receipt on WhatsApp for final confirmation.</p>
+              </div>
+              <div class="payment-detail">
+                <strong>Queendom.ng Payment Details</strong>
+                <span>Bank Name: Opay</span>
+                <span>Account Name: Orji Mary Goodness</span>
+                <span>Account No: 8029870054</span>
+              </div>
+              <div class="booking-summary" id="bookingSummary"></div>
+              <a class="button soft" id="receiptButton" href="https://wa.me/2348029870054">Send Receipt on WhatsApp</a>
+              <a class="button soft" href="admin.html">View Admin Dashboard</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section beige">
+        <div class="container">
+          <div class="notice">A transportation fee applies for home service. Clients must provide a safe, clean, and comfortable space. Cancellation or rescheduling should be made at least 12 hours before the appointment time.</div>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

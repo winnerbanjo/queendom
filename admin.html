@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin Dashboard | Queendom De Original Spa</title>
+    <meta name="description" content="Simple local booking dashboard for Queendom De Original Spa.">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body class="admin-shell">
+    <header class="admin-header">
+      <div>
+        <span class="eyebrow">Admin</span>
+        <h1>Bookings Dashboard</h1>
+      </div>
+      <a class="button soft" href="index.html">Back to Website</a>
+    </header>
+
+    <main class="admin-main">
+      <p class="notice">This is a simple static dashboard. Bookings are saved in this browser using local storage, while clients also send their receipt and details through WhatsApp.</p>
+
+      <section class="admin-stats" aria-label="Booking stats">
+        <div class="stat-card"><strong id="totalBookings">0</strong><span>Total bookings</span></div>
+        <div class="stat-card"><strong id="pendingBookings">0</strong><span>Awaiting payment</span></div>
+        <div class="stat-card"><strong id="spaBookings">0</strong><span>Spa sessions</span></div>
+        <div class="stat-card"><strong id="homeBookings">0</strong><span>Home service</span></div>
+      </section>
+
+      <section class="admin-actions" aria-label="Dashboard actions">
+        <button id="exportBookings" type="button">Export JSON</button>
+        <button id="clearBookings" class="button secondary" type="button">Clear Bookings</button>
+        <a class="button secondary" href="booking.html">Test Booking</a>
+      </section>
+
+      <section id="adminList" aria-label="Saved bookings"></section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
