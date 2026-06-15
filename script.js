@@ -1,5 +1,8 @@
 const BOOKINGS_KEY = "queendomBookings";
 const WHATSAPP_NUMBER = "2348029870054";
+const ADMIN_USERNAME = "queendom";
+const ADMIN_PASSWORD = "Queendom2026";
+const ADMIN_AUTH_KEY = "queendomAdminAuthed";
 
 const priceGuide = {
   "Swedish Massage|60 mins|Spa": "from ₦25k",
@@ -116,6 +119,48 @@ function initBookingForm() {
 function initAdmin() {
   const adminList = document.querySelector("#adminList");
   if (!adminList) return;
+
+  const loginPanel = document.querySelector("#adminLogin");
+  const adminContent = document.querySelector("#adminContent");
+  const loginForm = document.querySelector("#adminLoginForm");
+  const loginError = document.querySelector("#loginError");
+  const logoutButton = document.querySelector("#logoutAdmin");
+
+  function showAdminContent() {
+    if (loginPanel) loginPanel.hidden = true;
+    if (adminContent) adminContent.hidden = false;
+  }
+
+  function showLogin() {
+    if (loginPanel) loginPanel.hidden = false;
+    if (adminContent) adminContent.hidden = true;
+  }
+
+  if (sessionStorage.getItem(ADMIN_AUTH_KEY) === "true") {
+    showAdminContent();
+  } else {
+    showLogin();
+  }
+
+  loginForm?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const data = new FormData(loginForm);
+    const username = String(data.get("username") || "").trim();
+    const password = String(data.get("password") || "");
+
+    if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
+      sessionStorage.setItem(ADMIN_AUTH_KEY, "true");
+      if (loginError) loginError.textContent = "";
+      showAdminContent();
+    } else if (loginError) {
+      loginError.textContent = "Incorrect admin login details.";
+    }
+  });
+
+  logoutButton?.addEventListener("click", () => {
+    sessionStorage.removeItem(ADMIN_AUTH_KEY);
+    showLogin();
+  });
 
   const bookings = getBookings();
   const total = bookings.length;
