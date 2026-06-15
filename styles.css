@@ -572,6 +572,45 @@ p {
   color: var(--paper);
 }
 
+.admin-login {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 28px;
+  background:
+    linear-gradient(rgba(17, 17, 15, 0.72), rgba(17, 17, 15, 0.78)),
+    url("assets/massage-candles.jpg") center / cover no-repeat;
+}
+
+.login-card {
+  width: min(460px, 100%);
+  padding: 34px;
+  border: 1px solid rgba(255, 252, 245, 0.18);
+  background: rgba(255, 252, 245, 0.94);
+  box-shadow: 0 34px 100px rgba(0, 0, 0, 0.36);
+}
+
+.login-card h1 {
+  color: var(--ink);
+  font-size: clamp(44px, 7vw, 70px);
+}
+
+.login-card .button.secondary {
+  width: 100%;
+}
+
+.login-error {
+  min-height: 22px;
+  color: #8b1e16;
+  font-weight: 800;
+}
+
+.admin-top-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
 .admin-header h1 {
   max-width: none;
   font-size: clamp(42px, 7vw, 76px);
@@ -891,6 +930,10 @@ textarea {
     display: grid;
     grid-template-columns: 1fr;
     justify-items: start;
+  }
+
+  .admin-top-actions {
+    width: 100%;
   }
 
   .admin-stats,
