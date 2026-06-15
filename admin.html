@@ -8,12 +8,29 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body class="admin-shell">
+    <section class="admin-login" id="adminLogin" aria-label="Admin login">
+      <form class="login-card" id="adminLoginForm">
+        <span class="eyebrow">Queendom admin</span>
+        <h1>Staff Login</h1>
+        <p class="muted">Enter the admin details to view saved booking requests.</p>
+        <label>Username<input type="text" name="username" autocomplete="username" required></label>
+        <label>Password<input type="password" name="password" autocomplete="current-password" required></label>
+        <button type="submit">Login</button>
+        <p class="login-error" id="loginError" role="alert"></p>
+        <a class="button secondary" href="index.html">Back to Website</a>
+      </form>
+    </section>
+
+    <div id="adminContent" hidden>
     <header class="admin-header">
       <div>
         <span class="eyebrow">Admin</span>
         <h1>Bookings Dashboard</h1>
       </div>
-      <a class="button soft" href="index.html">Back to Website</a>
+      <div class="admin-top-actions">
+        <button class="button soft" id="logoutAdmin" type="button">Logout</button>
+        <a class="button soft" href="index.html">Back to Website</a>
+      </div>
     </header>
 
     <main class="admin-main">
@@ -34,6 +51,7 @@
 
       <section id="adminList" aria-label="Saved bookings"></section>
     </main>
+    </div>
 
     <script src="script.js"></script>
   </body>
